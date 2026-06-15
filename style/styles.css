@@ -3,6 +3,7 @@
     padding: 0;
     margin: 0;
     scroll-behavior: smooth;
+    color: #ffffff;
 }
 
 body {
@@ -45,7 +46,7 @@ nav {
     height: 100vh;
 }
 
-img {
+.home-content img {
     width: 15%;
     height: auto;
     border-radius: 100%;
@@ -74,6 +75,24 @@ img {
     height: 100vh;
     padding: 50px 20px;
     background-color: #171717;
+    color: #cccccc;
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.project-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
 
 .projects h2 {
@@ -200,4 +219,152 @@ button:hover {
 
 .social-links a:hover {
     color: #FF5F1F;
+}
+
+/* ===== Admin Panel ===== */
+.admin-page {
+    background-color: #000000;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.admin-container {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 40px;
+    text-align: center;
+    min-width: 300px;
+}
+
+.admin-container h2 {
+    color: #FF5F1F;
+    margin-bottom: 10px;
+}
+
+.admin-container p {
+    color: #cccccc;
+    margin-bottom: 20px;
+}
+
+.admin-links {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+}
+
+.admin-links a {
+    color: #ffffff;
+    background-color: #FF5F1F;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.admin-links a:hover {
+    background-color: #e04e1b;
+}
+
+.admin-form {
+    text-align: left;
+    width: 400px;
+}
+
+.admin-form h2 {
+    color: #FF5F1F;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.admin-form label {
+    display: block;
+    margin-top: 12px;
+    margin-bottom: 4px;
+    color: #cccccc;
+    font-weight: bold;
+}
+
+.admin-form input,
+.admin-form textarea {
+    width: 100%;
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.05);
+    color: #ffffff;
+    box-sizing: border-box;
+}
+
+.admin-form textarea {
+    resize: vertical;
+}
+
+.admin-form button {
+    margin-top: 20px;
+    width: 100%;
+}
+
+.admin-form a {
+    display: block;
+    text-align: center;
+    margin-top: 16px;
+    color: #FF5F1F;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.admin-form a:hover {
+    text-decoration: underline;
+}
+
+.error-msg {
+    color: #ff5f5f;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.current-image {
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+    margin: 8px 0;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    overflow: hidden;
+    table-layout: fixed;
+}
+
+.admin-table th,
+.admin-table td {
+    padding: 12px;
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.admin-table th {
+    background: rgba(255, 95, 31, 0.2);
+    color: #FF5F1F;
+}
+
+.admin-table td:nth-child(4) {
+    max-width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.project-date {
+    font-size: 0.8rem;
+    color: #999999;
+    margin-top: 8px;
 }

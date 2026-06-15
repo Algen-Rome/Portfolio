@@ -1,3 +1,7 @@
+<?php
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,11 +33,38 @@
     </section>
 
     <section id="projects" class="projects">
-        <h2>Projects</h2>
-        <div class="project-list">
-            <script type="module" src="jscript/load-projects.js"></script>
+    <h2>Projects</h2>
+    <div class="project-list">
+        <?php
+try {
+    $conn = new mysqli("sql207.infinityfree.com", "if0_42187207", "Algen081002", "if0_42187207_portfolio_database");
+    $result = $conn->query("SELECT * FROM projects ORDER BY created_at DESC");
+} catch (Exception $e) {
+    echo "<p style='color:red;'>DB Error: " . $e->getMessage() . "</p>";
+    $result = false;
+}
+
+if ($result):
+while ($row = $result->fetch_assoc()):
+?>
+        <div class="project-card">
+            <?php if ($row['image']): ?>
+                <img src="php/uploads/<?= htmlspecialchars($row['image']) ?>" alt="<?= htmlspecialchars($row['title']) ?>">
+            <?php endif; ?>
+            <h3><?= htmlspecialchars($row['title']) ?></h3>
+            <p><?= htmlspecialchars($row['description']) ?></p>
+            <?php if ($row['category']): ?>
+                <span class="category"><?= htmlspecialchars($row['category']) ?></span>
+            <?php endif; ?>
+            <?php if ($row['link']): ?>
+                <a href="<?= htmlspecialchars($row['link']) ?>" target="_blank">View Project</a>
+            <?php endif; ?>
+            <p class="project-date">Added: <?= date("M d, Y", strtotime($row['created_at'])) ?></p>
         </div>
-    </section>
+        <?php endwhile; endif; ?>
+        <?php $conn->close(); ?>
+    </div>
+</section>
 
     <section id="about" class="about">
         <h2>About Me</h2>
@@ -61,7 +92,6 @@
             <a href="https://www.facebook.com/Gano.AlgenRome.Mari" target="_blank"><i class="fab fa-facebook"></i></a>
         </div>
     </footer>
-    <script type="module" src="jscript/firebase-config.js"></script>
 </body>
 
 </html>
