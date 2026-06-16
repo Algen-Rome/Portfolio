@@ -37,13 +37,13 @@ error_reporting(E_ALL);
     <div class="project-list">
         <?php
 try {
-    $conn = new mysqli("sql207.infinityfree.com", "if0_42187207", "Algen081002", "if0_42187207_portfolio_database");
+    require_once 'php/db_config.php';
+    $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
     $result = $conn->query("SELECT * FROM projects ORDER BY created_at DESC");
 } catch (Exception $e) {
     echo "<p style='color:red;'>DB Error: " . $e->getMessage() . "</p>";
     $result = false;
 }
-
 if ($result):
 while ($row = $result->fetch_assoc()):
 ?>

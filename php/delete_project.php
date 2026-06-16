@@ -6,7 +6,8 @@ if (!isset($_SESSION["user_id"])) {
     exit;
 }
 
-$conn = new mysqli("sql207.infinityfree.com", "if0_42187207", "Algen081002", "if0_42187207_portfolio_database");
+require_once 'db_config.php';
+$conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
 if (isset($_GET["id"])) {
     $id = $_GET["id"];

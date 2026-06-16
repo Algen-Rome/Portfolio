@@ -4,7 +4,8 @@ session_start();
 $error = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $conn = new mysqli("sql207.infinityfree.com", "if0_42187207", "Algen081002", "if0_42187207_portfolio_database");
+    require_once 'db_config.php';
+$conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
     $username = $_POST["username"];
     $password = $_POST["password"];
