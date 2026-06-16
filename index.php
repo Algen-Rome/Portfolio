@@ -68,9 +68,9 @@ while ($row = $result->fetch_assoc()):
 
     <section id="about" class="about">
         <h2>About Me</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel sapien eget nunc efficitur
-            tincidunt. Curabitur at felis ac nisi efficitur bibendum. Sed ut perspiciatis unde omnis iste
-            natus error sit voluptatem accusantium doloremque laudantium.</p>
+        <p>I'm a self-driven developer passionate about two things: crafting smooth, 
+            intuitive mobile apps and building games that feel alive. 
+            I believe the best way to grow is to keep building.</p>
     </section>
 
     <section id="contact" class="contact">
